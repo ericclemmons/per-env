@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var pkg = require(process.cwd() + "/package.json");
+var spawn = require("child_process").spawn;
+
+// Default to "development"
+var NODE_ENV = process.env.NODE_ENV || "development";
+
+var env = Object.assign(
+  {},
+  // Default NODE_ENV
+  { NODE_ENV: NODE_ENV},
+  // Override with package.json custom env variables
+  (pkg && pkg["per-env"] && pkg["per-env"][NODE_ENV]) || {},
+
+  // Explicit env takes precedence
+  process.env
+);
+
+var command = "npm";
+
+var script = [
+  env.npm_lifecycle_event, // e.g. "start"
+  env.NODE_ENV,
+].join(":"); // e.g. "start:development"
+
+var args = [
+  "run",
+  script
+].concat(
+  // Extra arguments after "per-env"
+  process.argv.slice(process.argv.indexOf(__filename) + 1)
+);
+
+var options = {
+  cwd: process.cwd(),
+  env: env,
+  stdio: "inherit"
+};
+
+spawn(command, args, options);

@@ -1,0 +1,40 @@
+{
+  "name": "per-env",
+  "version": "1.0.0",
+  "description": "Clean up your package.json with per-NODE_ENV npm scripts",
+  "bin": {
+    "per-env": "./bin/per-env"
+  },
+  "scripts": {
+    "test": "./bin/per-env && NODE_ENV=test ./bin/per-env",
+
+    "pretest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
+    "test:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
+    "posttest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
+
+    "pretest:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
+    "test:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
+    "posttest:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}"
+  },
+  "per-env": {
+    "development": {
+      "CUSTOM_VALUE": "dev"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericclemmons/per-env.git"
+  },
+  "keywords": [
+    "npm",
+    "run",
+    "NODE_ENV",
+    "scripts"
+  ],
+  "author": "Eric Clemmons <eric@smarterspam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericclemmons/per-env/issues"
+  },
+  "homepage": "https://github.com/ericclemmons/per-env#readme"
+}
