@@ -1,17 +1,15 @@
 {
   "name": "per-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clean up your package.json with per-NODE_ENV npm scripts",
   "bin": {
     "per-env": "./bin/per-env"
   },
   "scripts": {
     "test": "./bin/per-env && NODE_ENV=test ./bin/per-env",
-
     "pretest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "test:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "posttest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
-
     "pretest:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "test:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "posttest:test": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}"
