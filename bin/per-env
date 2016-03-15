@@ -29,7 +29,7 @@ var args = [
   script
 ].concat(
   // Extra arguments after "per-env"
-  process.argv.slice(process.argv.indexOf(__filename) + 1)
+  process.argv.slice(2)
 );
 
 var options = {
