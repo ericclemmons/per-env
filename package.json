@@ -6,7 +6,10 @@
     "per-env": "./bin/per-env"
   },
   "scripts": {
-    "test": "./bin/per-env && NODE_ENV=test ./bin/per-env",
+    "test": "NODE_ENV=development ./bin/per-env && NODE_ENV=test ./bin/per-env",
+    "posttest": "NODE_ENV=test npm run test:status",
+    "test:status": "./bin/per-env",
+    "test:status:test": "cat does.not.exist &> /dev/null && exit 1 || echo Status: $?",
     "pretest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "test:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",
     "posttest:development": "echo ${npm_lifecycle_event} ${CUSTOM_VALUE}",

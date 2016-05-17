@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var pkg = require(process.cwd() + "/package.json");
-var spawn = require("child_process").spawn;
+var spawnSync = require("child_process").spawnSync;
 
 // Default to "development"
 var NODE_ENV = process.env.NODE_ENV || "development";
@@ -38,4 +38,6 @@ var options = {
   stdio: "inherit"
 };
 
-spawn(command, args, options);
+var result = spawnSync(command, args, options);
+
+process.exit(result.status);
