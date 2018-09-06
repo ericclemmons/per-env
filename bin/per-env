@@ -2,6 +2,7 @@
 
 var pkg = require(process.cwd() + "/package.json");
 var spawnSync = require("child_process").spawnSync;
+var dotenv = require('dotenv').load( process.cwd() + ".env" );
 
 // Default to "development"
 var NODE_ENV = process.env.NODE_ENV || "development";
