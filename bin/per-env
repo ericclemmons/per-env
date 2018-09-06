@@ -2,7 +2,15 @@
 
 var pkg = require(process.cwd() + "/package.json");
 var spawnSync = require("child_process").spawnSync;
-var dotenv = require('dotenv').load( process.cwd() + ".env" );
+
+try {
+  require('dotenv');
+} catch (ex) {
+  console.log('Kindly install dotenv package - https://www.npmjs.com/package/dotenv');
+  return false;
+}
+
+require('dotenv').config();
 
 // Default to "development"
 var NODE_ENV = process.env.NODE_ENV || "development";
