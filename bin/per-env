@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const spawn = require('cross-spawn');
 
 var pkg = require(process.cwd() + "/package.json");
 var spawnSync = require("child_process").spawnSync;
@@ -16,7 +17,7 @@ var env = Object.assign(
   // Explicit env takes precedence
   process.env
 );
-
+//bug: qiulang, in windows, command should be npm.cmd
 var command = "npm";
 
 var script = [
@@ -38,6 +39,8 @@ var options = {
   stdio: "inherit"
 };
 
-var result = spawnSync(command, args, options);
+//using cross-spawn
+var result = spawn.sync(command, args, options);
+//var result = spawnSync(command, args, options);
 
 process.exit(result.status);
