@@ -26,7 +26,7 @@ var script = [
 
 // Check If the script exists
 if (!pkg || !pkg.scripts || !pkg.scripts[script]) {
-  console.warn('Cannot find the script:' + script);
+  console.warn('[per-env] [Warning] Cannot find the script: ' + script);
   process.exit(0);
 }
 
