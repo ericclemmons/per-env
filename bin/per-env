@@ -24,6 +24,12 @@ var script = [
   env.NODE_ENV,
 ].join(":"); // e.g. "start:development"
 
+// Check If the script exists
+if (!pkg || !pkg.scripts || !pkg.scripts[script]) {
+  console.warn('Cannot find the script:' + script);
+  process.exit(0);
+}
+
 var args = [
   "run",
   script
