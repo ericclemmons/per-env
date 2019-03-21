@@ -20,7 +20,7 @@ var env = Object.assign(
 var command = "yarn";
 
 var script = [
-  'test', // e.g. "start"
+  env.npm_lifecycle_event, // e.g. "start"
   env.NODE_ENV,
 ].join(":"); // e.g. "start:development"
 
