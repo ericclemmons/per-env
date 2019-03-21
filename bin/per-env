@@ -17,17 +17,14 @@ var env = Object.assign(
   process.env
 );
 
-var command = "npm";
+var command = "yarn";
 
 var script = [
   env.npm_lifecycle_event, // e.g. "start"
   env.NODE_ENV,
 ].join(":"); // e.g. "start:development"
 
-var args = [
-  "run",
-  script
-].concat(
+var args = [script].concat(
   // Extra arguments after "per-env"
   process.argv.slice(2)
 );
