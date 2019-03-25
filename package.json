@@ -1,5 +1,5 @@
 {
-  "name": "per-env",
+  "name": "@gendalldesign/per-env",
   "version": "1.0.2",
   "description": "Clean up your package.json with per-NODE_ENV npm scripts",
   "bin": {
