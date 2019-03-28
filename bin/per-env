@@ -7,7 +7,8 @@ var spawnSync = require("child_process").spawnSync;
 var NODE_ENV = process.env.NODE_ENV || "development";
 
 var env = Object.assign(
-  {},
+  // Set default env variables
+  (pkg && pkg["per-env"] && pkg["per-env"]["default"]) || {},
   // Default NODE_ENV
   { NODE_ENV: NODE_ENV},
   // Override with package.json custom env variables
