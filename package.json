@@ -1,7 +1,7 @@
 {
   "name": "@gendalldesign/per-env",
-  "version": "1.0.3",
-  "description": "Clean up your package.json with per-NODE_ENV npm scripts",
+  "version": "1.0.5",
+  "description": "Clean up your package.json with per-NODE_ENV yarn scripts",
   "bin": {
     "per-env": "./bin/per-env"
   },
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ericclemmons/per-env.git"
+    "url": "git+https://github.com/gendalldesign/per-env.git"
   },
   "keywords": [
     "npm",
@@ -32,10 +32,10 @@
     "NODE_ENV",
     "scripts"
   ],
-  "author": "Eric Clemmons <eric@smarterspam.com>",
+  "author": "Rob Stanford <rob@gendall.co.uk>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ericclemmons/per-env/issues"
+    "url": "https://github.com/gendalldesign/per-env/issues"
   },
-  "homepage": "https://github.com/ericclemmons/per-env#readme"
+  "homepage": "https://github.com/gendalldesign/per-env#readme"
 }
