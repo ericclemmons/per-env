@@ -17,7 +17,7 @@ var env = Object.assign(
   process.env
 );
 
-var command = "yarn";
+var command = (process.platform === "win32") ? "yarn.cmd" : "yarn";
 
 var script = [
   env.npm_lifecycle_event, // e.g. "start"
