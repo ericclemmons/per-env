@@ -23,7 +23,6 @@ var cmd = eng + ext;
 
 var args = (eng == "npm") ? ['run'] : [];
 args.push(env.npm_lifecycle_event + ':' + env.NODE_ENV);
-args.push(process.argv.slice(2));
 
 var options = {
   cwd: process.cwd(),
