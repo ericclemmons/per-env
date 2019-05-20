@@ -1,5 +1,5 @@
 {
-  "name": "@gendalldesign/per-env",
+  "name": "@gendall/per-env",
   "version": "1.1.0",
   "description": "Clean up your package.json with per-NODE_ENV yarn scripts",
   "bin": {
