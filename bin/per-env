@@ -17,7 +17,9 @@ var env = Object.assign(
   process.env
 );
 
-var command = (process.platform === "win32") ? "yarn.cmd" : "yarn";
+var eng = ("yarn" in (pkg.engines || {})) ? "yarn" : "npm";
+var ext = (process.platform === "win32") ? ".cmd" : "";
+var cmd = eng + ext;
 
 var script = [
   env.npm_lifecycle_event, // e.g. "start"
@@ -35,6 +37,6 @@ var options = {
   stdio: "inherit"
 };
 
-var result = spawnSync(command, args, options);
+var result = spawnSync(cmd, args, options);
 
 process.exit(result.status);
