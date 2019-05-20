@@ -21,15 +21,9 @@ var eng = ("yarn" in (pkg.engines || {})) ? "yarn" : "npm";
 var ext = (process.platform === "win32") ? ".cmd" : "";
 var cmd = eng + ext;
 
-var script = [
-  env.npm_lifecycle_event, // e.g. "start"
-  env.NODE_ENV,
-].join(":"); // e.g. "start:development"
-
-var args = [script].concat(
-  // Extra arguments after "per-env"
-  process.argv.slice(2)
-);
+var args = (eng == "npm") ? ['run'] : [];
+args.push(env.npm_lifecycle_event + ':' + env.NODE_ENV);
+args.push(process.argv.slice(2));
 
 var options = {
   cwd: process.cwd(),
