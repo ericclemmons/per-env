@@ -2,5 +2,5 @@
 
 A fork of Eric Clemmons's [per-env](https://github.com/ericclemmons/per-env) with the following changes:
 
-* uses yarn instead of npm
+* uses yarn or npm
 * works on windows too
