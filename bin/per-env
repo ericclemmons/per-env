@@ -28,6 +28,7 @@ var args = [
   "run",
   script
 ].concat(
+  "--",
   // Extra arguments after "per-env"
   process.argv.slice(2)
 );
