@@ -1,6 +1,6 @@
 {
   "name": "@gendall/per-env",
-  "version": "1.1.2",
+  "version": "1.0.4",
   "description": "Clean up your package.json with per-NODE_ENV yarn scripts",
   "bin": {
     "per-env": "./bin/per-env"
@@ -22,9 +22,13 @@
       "CUSTOM_VALUE": "dev"
     }
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gendalldesign/per-env.git"
+    "url": "git://github.com/gendall/per-env",
+    "owner": "https://github.com/gendall"
   },
   "keywords": [
     "npm",
@@ -35,7 +39,7 @@
   "author": "Rob Stanford <rob@gendall.co.uk>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gendalldesign/per-env/issues"
+    "url": "https://github.com/gendall/per-env/issues"
   },
-  "homepage": "https://github.com/gendalldesign/per-env#readme"
+  "homepage": "https://github.com/gendall/per-env#readme"
 }
