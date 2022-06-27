@@ -2,6 +2,7 @@
 
 var pkg = require(process.cwd() + "/package.json");
 var spawnSync = require("child_process").spawnSync;
+var which = require("which");
 
 // Default to "development"
 var NODE_ENV = process.env.NODE_ENV || "development";
@@ -17,7 +18,7 @@ var env = Object.assign(
   process.env
 );
 
-var command = "npm";
+var command = which.sync("npm"); // get full path to npm command
 
 var script = [
   env.npm_lifecycle_event, // e.g. "start"
